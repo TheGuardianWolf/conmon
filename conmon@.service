@@ -1,0 +1,12 @@
+# /etc/systemd/system/conmon@.service
+
+[Unit]
+Description=Restart service when some criterion fails
+
+[Service]
+ExecStart=/usr/local/bin/conmon %I
+Restart=always
+RestartSec=600
+
+[Install]
+WantedBy=multi-user.target
